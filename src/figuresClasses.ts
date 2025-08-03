@@ -13,11 +13,15 @@ export class Triangle implements Figure {
     public b: number,
     public c: number,
   ) {
-    if (a <= 0 || b <= 0 || c <= 0) {
+    if (this.a <= 0 || this.b <= 0 || this.c <= 0) {
       throw new Error('Triangles side cant be 0');
     }
 
-    if (a >= b + c || b >= a + c || c >= b + a) {
+    if (
+      this.a >= this.b + this.c ||
+      this.b >= this.a + this.c ||
+      this.c >= this.b + this.a
+    ) {
       throw new Error('Triangles side cant be bigger then sum of 2 other');
     }
   }
@@ -39,7 +43,7 @@ export class Circle implements Figure {
     public color: 'red' | 'green' | 'blue',
     public radius: number,
   ) {
-    if (radius <= 0) {
+    if (this.radius <= 0) {
       throw new Error('Circle radius cant be 0');
     }
   }
@@ -59,7 +63,7 @@ export class Rectangle implements Figure {
     public a: number,
     public b: number,
   ) {
-    if (a <= 0 || b <= 0) {
+    if (this.a <= 0 || this.b <= 0) {
       throw new Error('Rectangle side cant be 0');
     }
   }
